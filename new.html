@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Isaac Torbett</title>
+    <link rel="stylesheet" href="new.css" />
+    <script src="script.js"></script>
+</head>
+
+<body onload="main()" class="loading">
+    <div id="container">
+        <div id="background_shard" class="sprite"></div>
+        <div id="shard" class="sprite">
+            <div class="arrow sprite" id="up_arrow"></div>
+            <div id="main_menu" class="menu">
+                <div class="sprite panel1_shadow"></div>
+                <div class="sprite panel2_shadow"></div>
+                <div class="sprite panel3_shadow"></div>
+                <button tabindex="1" subtitle="1" class="panel panel1 sprite" id="social_panel" background-image="sprites/social2.png"></button>
+                <button tabindex="2" subtitle="2" class="panel panel2 sprite" id="games_panel" background-image="sprites/games.png"></button>
+                <button tabindex="3" subtitle="3" class="panel panel3 sprite" id="media_panel" background-image="sprites/media.png"></button>
+            </div>
+            <div id="game_menu" class="menu">
+                <div class="sprite panel1_shadow"></div>
+                <a href="https://izach.itch.io/space-shoot" tabindex="1" subtitle="4" class="panel panel1 sprite" id="space_shoot_panel" background-image="space-shoot.png"></a>
+                <button tabindex="2" class="sprite back" title="Back" id="game_main_menu_return"></button>
+            </div>
+            <div id="media_menu" class="menu">
+                <div class="sprite panel1_shadow"></div>
+                <div class="sprite panel2_shadow"></div>
+                <div class="sprite panel3_shadow"></div>
+                <a href="https://isaactorbett.com/media.html#photos" tabindex="1" subtitle="5" class="panel panel1 sprite" id="photos_panel" background-image="media/photos.jpg"></a>
+                <a href="https://isaactorbett.com/media.html#leathercraft" tabindex="2" subtitle="6" class="panel panel2 sprite" id="leathercraft_panel" background-image="media/leathercraft.jpg"></a>
+                <a href="https://isaactorbett.com/media.html#woodcraft" tabindex="3" subtitle="7" class="panel panel3 sprite" id="woodcraft_panel" background-image="media/woodcraft.jpg"></a>
+                <button tabindex="4" class="sprite back" title="Back" id="media_main_menu_return"></button>
+            </div>
+            <div class="arrow sprite" id="down_arrow"></div>
+        </div>
+        <div id="social_menu" class="menu">
+            <div id="social_name" class="sprite"></div>
+            <a tabindex="1" class="sprite" index="1" nameidx="1" href="https://www.instagram.com/izacht13_/" title="Instagram"></a>
+            <a tabindex="2" class="sprite" index="2" nameidx="2" href="https://twitter.com/Izacht13" title="Twitter"></a>
+            <a tabindex="3" class="sprite" index="3" nameidx="3" href="https://github.com/Izacht13" title="Github"></a>
+            <a tabindex="4" class="sprite" index="4" nameidx="4" href="https://connect.garmin.com/modern/profile/d544f4f2-57b6-44e1-a2ac-43fe34f99b5a" title="Garmin Connect"></a>
+            <button tabindex="5" class="sprite back" title="Back" id="social_main_menu_return"></button>
+        </div>
+        <div id="title" class="sprite text" color="white" text="Isaac Torbett"></div>
+        <div id="subtitle" class="sprite"></div>
+    </div>
+    <div id="loading"></div>
+</body>
+
+</html>

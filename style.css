@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans');
+
+html {
+    font-size: 18px;
+}
+
+@media (max-device-width: 600px) {
+    #container {
+        width: 85vw !important;
+    }
+    html {
+        font-size: 30px;
+    }
+    body, .blur {
+        background-size: unset !important;
+    }
+    #social a:not(:first-child) {
+        margin-left: 8px !important;
+    }
+    #social {
+        margin-left: 0 !important;
+        margin-bottom: 8px;
+    }
+    #social a {
+        font-size: 2em !important;
+        border-radius: 12px !important;
+    }
+    #page {
+        padding: 5px !important;
+        border-radius: 12px !important;
+    }
+    #page > :first-child {
+        border-top-left-radius: 8px !important;
+        border-top-right-radius: 8px !important;
+    }
+    #page > .section {
+        border-bottom-left-radius: 8px !important;
+        border-bottom-right-radius: 8px !important;
+    }
+    #nav a {
+        width: 5em !important;
+        font-size: 1.2em !important;
+        padding: 5px !important;
+        border-radius: 12px !important;
+    }
+    #nav a > b {
+        border-radius: 9px !important;
+    }
+    #nav {
+        padding: 1.2em 0 !important;
+        margin-bottom: 5px !important;
+    }
+}
+
+@media (max-device-width: 1050px) {
+    #header {
+        flex-direction: column;
+    }
+    #social {
+        margin-left: 0 !important;
+        margin-bottom: 5px;
+    }
+    #social a {
+        font-size: 1.4em !important;
+    }
+}
+
+body {
+    background: fixed no-repeat url('background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.blur {
+    background: fixed no-repeat url('background-blur.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+#container {
+    margin: auto;
+    margin-top: 25vh;
+    width: 50vw;
+    display: block;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+}
+
+#name {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 2em;
+    color: #eee;
+    text-shadow: #111 0px 2px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+}
+
+#name.chromaber {
+    text-shadow: #111 0px 2px, rgba(255, 25, 15, 0.25) -3px -0px, rgba(25, 35, 255, 0.25) 3px 0px;
+}
+
+#name.chromaber2 {
+    text-shadow: #111 0px 2px, rgba(255, 25, 15, 0.5) -8px 0px, rgba(25, 35, 255, 0.5) 8px 0px;
+}
+
+#social, #header > a {
+    margin-left: auto;
+    display: inline-flex;
+    justify-content: flex-end;
+}
+
+#social a:not(:first-child) {
+    margin-left: 2px;
+}
+
+#social a, #header > a {
+    display: inline-flex;
+    height: 1.6em;
+    background: #eee;
+    border-bottom: solid #222 2px;
+    color: #333;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#header > a {
+    width: 5em;
+    font-family: 'Roboto Mono', sans-serif;
+}
+
+#header > a > i {
+    margin-right: 4px;
+}
+
+#social a {
+    width: 1.6em;
+}
+
+#social a:hover, #header > a:hover {
+    background-clip: content-box;
+    border-top: solid 2px transparent;
+    border-bottom-width: 0px;
+}
+
+#page {
+    border-radius: 6px;
+    border-color: white;
+    border-style: solid;
+    border-width: 2px;
+    padding: 1px;
+}
+
+#page > * {
+    padding: 1em;
+}
+
+#page > :first-child {
+    border-top-left-radius: 3.5px;
+    border-top-right-radius: 3.5px;
+}
+
+#page > .section {
+    border-bottom-left-radius: 3.5px;
+    border-bottom-right-radius: 3.5px;
+}
+
+#nav {
+    background: white;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 1px;
+}
+
+#nav a {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    width: 8em;
+    height: 2em;
+    font-size: 1rem;
+    line-height: 2em;
+    border-radius: 3.5px;
+    padding: 1px;
+}
+
+#nav a > b {
+    background: #eee;
+    display: inline-block;
+    margin: 0;
+    width: inherit;
+    height: inherit;
+    border-radius: 2.5px;
+}
+
+#nav a > b:hover {
+    background: transparent;
+    transition: background 0.1s ease-out;
+}
+
+.section {
+    margin: 0;
+    background: white;
+    font-size: 1rem;
+}
+
+.section:not(:target) {
+    display: none;
+}
+
+#games, #media, #woodcraft, #leathercraft, #photos {
+    border-top: solid 1px white;
+    background: transparent;
+}
+
+.media_item {
+    display: inline-block;
+    font-family: 'Roboto Mono', sans-serif;
+    font-size: small;
+    padding: 1px;
+    border: solid 1px white;
+    width: 24%;
+    text-decoration: none;
+}
+
+.media_item:hover {
+    border-color: black;
+}
+
+.media_item:hover > span {
+    background: #eee;
+    color: #111;
+}
+
+.media_item:hover img {
+    transform: scale(1.1);
+}
+
+.media_item .img_container {
+    display: flex;
+    overflow: hidden;
+}
+
+.media_item img {
+    transition: transform 0.2s ease;
+    display: inline-block;
+    width: 100%;
+    object-fit: cover;
+}
+
+.media_item > span {
+    display: block;
+    background: #111;
+    color: #eee;
+    text-align: center;
+}
+
+#posts > div {
+    color: #111;
+    position: relative;
+}
+
+#posts > div:after {
+    content: attr(date);
+    display: block;
+    position: absolute;
+    top: 1em;
+    right: 0;
+    color: #bbb;
+}
+
+#posts > div h1 {
+    color: #566;
+    text-indent: 16px;
+    font-family: 'Roboto Condensed', sans-serif;
+    height: 1em;
+    border-bottom: solid 1px #566;
+}
+
+#posts > div *:not(h1) {
+    text-indent: 1em;
+    font-size: 16px;
+    font-family: sans-serif;
+}

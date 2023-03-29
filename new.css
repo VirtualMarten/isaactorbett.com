@@ -1,0 +1,325 @@
+body {
+  background-image: url('/sprites/background.png');
+  background-size: cover;
+  width: 100%;
+  min-height: 99vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.hide {
+  display: none !important;
+}
+
+button.sprite {
+  outline: none;
+  border: none;
+}
+
+body.loading #container {
+  display: none;
+}
+
+body:not(.loading) #loading {
+  display: none;
+}
+
+.sprite {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  image-rendering: optimizespeed;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+.menu.hide {
+  display: none;
+}
+
+#loading {
+  display: flex;
+  width: 128px;
+  height: 128px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: url('/sprites/spinner_thin_2x.png');
+  background-position-x: -0px;
+}
+
+#container {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: calc(400px * 2);
+  height: calc(480px * 2);
+}
+
+#background_shard {
+  top: calc(134px * 2);
+  left: calc(50px * 2);
+  width: calc(334px * 2);
+  height: calc(198px * 2);
+  background: url('/sprites/bg_shard-flip.png');
+  background-size: cover;
+}
+
+#shard {
+  top: calc(33px * 2);
+  left: calc(192px * 2);
+  width: calc(179px * 2);
+  height: calc(263px * 2);
+  background: url('/sprites/shard-flip.png');
+  background-size: cover;
+}
+
+#shard.flipped {
+  transform: scaleX(-1) translateX(100%);
+}
+
+#shard.hide_panels > *  {
+  display: none;
+}
+
+#title {
+  top: calc(56px * 2);
+  left: calc(68px * 2);
+  width: calc(134px * 2);
+  height: calc(44px * 2);
+  background: url('/sprites/titles.png');
+  background-size: cover;
+}
+
+#title.flipped {
+  transform: translateX(240px);
+}
+
+#subtitle {
+  top: calc(110px * 2);
+  left: calc(156px * 2);
+  width: calc(77px * 2);
+  height: calc(6px * 2);
+  background: url('/sprites/categories.png');
+  background-size: 100%;
+}
+
+#social_name {
+  top: calc(-10px * 2);
+  left: calc(2px * 2);
+  width: calc(84px * 2);
+  height: calc(7px * 2);
+  background: url('/sprites/social-names.png');
+  background-size: 100%;
+}
+
+#subtitle.flipped {
+  transform: translateX(66px);
+}
+
+.panel {
+  cursor: pointer;
+}
+
+.panel:hover, .panel:focus {
+  transform: translate(2px, 2px);
+  filter: saturate(120%);
+}
+
+.panel:after {
+  content: '';
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 0;
+}
+
+.panel:focus:after {
+  opacity: 1;
+}
+
+.panel1_shadow {
+  top: calc(13px * 2);
+  left: calc(21px * 2);
+  width: calc(146px * 2);
+  height: calc(94px * 2);
+  background: url('/sprites/panel1.png');
+  background-size: 100%;
+  opacity: 0.2;
+}
+
+.panel1 {
+  top: calc(10px * 2);
+  left: calc(19px * 2);
+  width: calc(146px * 2);
+  height: calc(94px * 2);
+  -webkit-mask-image: url('/sprites/panel1.png');
+  -webkit-mask-size: 100%;
+  mask-image: url('/sprites/panel1.png');
+  mask-size: 100%;
+  background-size: 100%;
+}
+
+.panel1:after {
+  background: url('/sprites/panel1_outline.png');
+  background-size: 100%;
+}
+
+.panel2_shadow {
+  top: calc(97px * 2);
+  left: calc(14px * 2);
+  width: calc(109px * 2);
+  height: calc(85px * 2);
+  background: url('/sprites/panel2.png');
+  background-size: 100%;
+  opacity: 0.2;
+}
+
+.panel2 {
+  top: calc(94px * 2);
+  left: calc(12px * 2);
+  width: calc(109px * 2);
+  height: calc(85px * 2);
+  -webkit-mask-image: url('/sprites/panel2.png');
+  -webkit-mask-size: 100%;
+  mask-image: url('/sprites/panel2.png');
+  mask-size: 100%;
+  background-size: 100%;
+}
+
+.panel2:after {
+  background: url('/sprites/panel2_outline.png');
+  background-size: 100%;
+}
+
+.panel3_shadow {
+  top: calc(153px * 2);
+  left: calc(6px * 2);
+  width: calc(83px * 2);
+  height: calc(96px * 2);
+  background: url('/sprites/panel3.png');
+  background-size: 100%;
+  opacity: 0.2;
+}
+
+.panel3 {
+  top: calc(150px * 2);
+  left: calc(4px * 2);
+  width: calc(83px * 2);
+  height: calc(96px * 2);
+  -webkit-mask-image: url('/sprites/panel3.png');
+  -webkit-mask-size: 100%;
+  mask-image: url('/sprites/panel3.png');
+  mask-size: 100%;
+  background-size: 100%;
+}
+
+.panel3:after {
+  background: url('/sprites/panel3_outline.png');
+  background-size: 100%;
+}
+
+#space_shoot_panel {
+  background-position: -10px -65px;
+  background-size: 110%;
+}
+
+.sprite.back {
+  top: calc(234px * 2);
+  left: calc(86px * 2);
+  width: calc(31px * 2);
+  height: calc(20px * 2);
+  background: url(sprites/back.png);
+  background-size: cover;
+  cursor: pointer;
+}
+
+.sprite.back:hover, .sprite.back:focus {
+  background-position-x: -62px;
+}
+
+#social_menu {
+  display: flex;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes bounceUp {
+  0% { transform: translateY(64px); }
+  10% { transform: translateY(32px); }
+  20% { transform: translateY(0px); }
+  70% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 1; background-position-x: 0px; }
+  33% { opacity: 1; background-position-x: calc(-26px * 2); }
+  66% { opacity: 1; background-position-x: calc(-26px * 2 * 2) }
+  100% { opacity: 1; background-position-x: calc(-26px * 2 * 3); }
+}
+
+#social_menu a.sprite {
+  position: relative;
+  width: calc(26px * 2);
+  height: calc(27px * 2);
+  background: url(sprites/social-icons.png);
+  background-size: 500%;
+  outline: none;
+  animation-name: bounceUp, fadeIn;
+  animation-duration: 0.3s, 0.2s;
+  animation-timing-function: steps(2), steps(1, jump-start);
+  animation-fill-mode: forwards, forwards;
+  opacity: 0;
+  transform: translateY(64px);
+  margin: 0 2px;
+}
+
+#social_menu a.sprite:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+#social_menu a.sprite:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+#social_menu a.sprite:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+#social_menu a.sprite:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+#social_menu a.sprite:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+#social_menu a.sprite:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+#social_menu a.sprite:hover, #social_menu a.sprite:focus {
+  background-position-x: -208px !important;
+}
+
+#social_main_menu_return {
+  width: calc(23px * 2);
+  height: calc(7px * 2);
+  background: url(sprites/back-word.png);
+  background-size: 200%;
+  top: calc(30px * 2);
+  left: 4px;
+}
+
+#social_main_menu_return:hover, #social_main_menu_return:focus {
+  background-position-x: -46px;
+}

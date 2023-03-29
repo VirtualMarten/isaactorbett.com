@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Isaac Torbett</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <b id="name" name="Isaac Torbett">Isaac Torbett</b>
+            <div id="social">
+                <a href="https://twitter.com/Izacht13" name="izacht13"><i class="fab fa-twitter"></i></a>
+                <a href="https://izach.itch.io/" name="izach"><i class="fab fa-itch-io"></i></a>
+                <a href="https://github.com/Izacht13" name="izacht13"><i class="fab fa-github"></i></a>
+                <a href="https://www.youtube.com/channel/UCGC2cFzcPiV6XriX0AjVfww" name="Isaac Torbett"><i class="fab fa-youtube"></i></a>
+                <a href="https://soundcloud.com/izacht13" name="izacht13"><i class="fab fa-soundcloud"></i></a>
+                <a href="https://www.instagram.com/izacht13_/" name="izacht13_"><i class="fab fa-instagram"></i></a>
+            </div>
+            <script>
+                let scrambleText = function (os, ns) {
+                    let s = '';
+                    for (let j = 0; j < os.length; j++) {
+                        s += String.fromCharCode(((j < ns.length) ? ns.charCodeAt(j) : os.charCodeAt(j)) + ((Math.random() > 0.5) ? 2 : -2));
+                    }
+                    return s;
+                }
+                let $social = document.getElementById("social");
+                let $name = document.getElementById("name");
+                $social.addEventListener("mouseleave", function (event) {
+                    let text = $name.getAttribute("name");
+                    window.setTimeout(function () {
+                        $name.innerText = scrambleText($name.innerText, text);
+                    }, 5);
+                    window.setTimeout(function () {
+                        $name.innerText = scrambleText($name.innerText, text);
+                        $name.setAttribute('class', 'chromaber');
+                    }, 15);
+                    window.setTimeout(function () {
+                        $name.innerText = text;
+                        $name.setAttribute('class', '');
+                    }, 30);
+                });
+                for (let $e of $social.getElementsByTagName("a")) {
+                    $e.addEventListener("mouseenter", function (event) {
+                        let text = $e.getAttribute("name");
+                        window.setTimeout(function () {
+                            $name.innerText = scrambleText($name.innerText, text);
+                        }, 10);
+                        window.setTimeout(function () {
+                            $name.innerText = scrambleText($name.innerText, text);
+                            $name.setAttribute('class', 'chromaber2');
+                        }, 35);
+                        window.setTimeout(function () {
+                            $name.innerText = scrambleText($name.innerText, text);
+                            $name.setAttribute('class', 'chromaber');
+                        }, 75);
+                        window.setTimeout(function () {
+                            $name.innerText = text;
+                            $name.setAttribute('class', '');
+                        }, 90);
+                    });
+                }
+            </script>
+        </div>
+        <div id="page" class="blur">
+            <div id="nav">
+                <a href="#posts" class="blur"><b>Posts</b></a>
+                <a href="#games" class="blur"><b>Games</b></a>
+                <a href="#media" class="blur"><b>Media</b></a>
+            </div>
+            <div id="posts" class="section">Fetching posts...</div>
+            <div id="games" class="section">
+                <a class="media_item" href="https://izach.itch.io/space-shoot">
+                    <span>SPACE SHOOT</span>
+                    <div class="img_container"><img src="space-shoot.png"></div>
+                </a>
+            </div>
+            <div id="media" class="section">
+                <a class="media_item" href="/media.html#woodcraft">
+                    <span>Woodcraft</span>
+                    <div class="img_container"><img src="media/woodcraft.jpg"></div>
+                </a>
+                <a class="media_item" href="/media.html#leathercraft">
+                    <span>Leathercraft</span>
+                    <div class="img_container"><img src="media/leathercraft.jpg"></div>
+                </a>
+                <a class="media_item" href="/media.html#photos">
+                    <span>Photos</span>
+                    <div class="img_container"><img src="media/photos.jpg"></div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+        if (document.location.hash == '') document.location.hash = 'posts';
+        let $posts = document.getElementById("posts");
+        let GET = function(url, cb) {
+            let req = new XMLHttpRequest();
+            req.addEventListener("load", function () {
+                cb(this.responseText);
+            });
+            req.open("GET", url);
+            req.send();
+        }
+        GET('https://api.isaactorbett.com/posts/0', function (res) {
+            $posts.innerHTML = '';
+            let posts = JSON.parse(res);
+            for (p of posts) {
+                $e = document.createElement('div');
+                GET('https://api.isaactorbett.com/' + p.name, function (res2) {
+                    $e.innerHTML = marked(res2);
+                    $e.setAttribute('date', p.date);
+                    $posts.appendChild($e);
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
