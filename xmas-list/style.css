@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    padding: 0;
+    --bg-color: #1b1215;
+    --text-color: #e2e9e6;
+    --text-color2: #8faa9e;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    width: 100%;
+}
+
+a {
+    text-decoration: underline;
+    text-decoration-color: var(--text-color2);
+    color: var(--text-color);
+}
+
+.poiret-one-regular {
+  font-family: "Poiret One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.instrument-sans-regular {
+  font-family: "Instrument Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+.instrument-sans-bold {
+  font-family: "Instrument Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+@keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1;  }
+}
+
+#background {
+    position: fixed;
+    min-height: 100vh;
+    overflow: hidden;
+    background-image: url('plaid-pattern.webp');
+    background-size: 20%;
+    background-repeat: repeat;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: scale(1.4) rotate(7deg);
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 1) 100%);
+    filter: sepia(80%) brightness(60%);
+    z-index: -1;
+    animation-name: fade-in;
+    animation-duration: .5s;
+    animation-timing-function: ease-in;
+}
+
+#container {
+    display: block;
+    width: 50%;
+    margin: auto;
+    margin-top: 1cm;
+    background-image: url('noise.webp');
+    background-color: rgba(0, 0, 0, 0.01);
+    backdrop-filter: blur(6px) brightness(90%) grayscale(30%);
+    padding: 1cm 1.2cm;
+    border-radius: 12px;
+    border: solid 1px rgba(255, 255, 255, .04);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+#primary-list {
+    display: flex;
+    flex-direction: column;
+    gap: .4cm;
+}
+
+#primary-list li {
+    display: flex;
+    flex-direction: row;
+    gap: .5cm;
+    background-color: #375e4f;
+    border-radius: 6px;
+    padding: 4px;
+}
+
+#primary-list img {
+    width: 6cm;
+    height: 6cm;
+    border-radius: 4px;
+}
+
+.links {
+    display: flex;
+    gap: .2rem;
+}
+
+.links a:after {
+    content: "•";
+    margin-left: .2rem;
+    text-decoration: none;
+    display:inline-block;
+}
+
+.links a:last-child:after {
+    content: "";
+}
