@@ -117,6 +117,12 @@ ul {
     content: "";
 }
 
+#info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 @media screen and (max-width: 1000px) {
     #container {
         width: 85%;
@@ -132,6 +138,12 @@ ul {
         margin-top: 0;
         border-radius: 0;
         text-align: center;
+    }
+    
+    #info {
+        flex-direction: column;
+        gap: .5rem;
+        justify-content: space-evenly;
     }
 
     #primary-list li {
