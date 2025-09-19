@@ -116,3 +116,45 @@ ul {
 .links a:last-child:after {
     content: "";
 }
+
+@media screen and (max-width: 1000px) {
+    #container {
+        width: 85%;
+        padding: .5cm;
+        margin-top: .5cm;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #container {
+        width: 90%;
+        padding: .5cm;
+        margin-top: 0;
+        border-radius: 0;
+        text-align: center;
+    }
+
+    #primary-list li {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: .24cm .24cm .5cm .24cm;
+    }
+    
+    #primary-list h2 {
+        margin: 0;
+    }
+
+    #primary-list img {
+        width: 100%;
+        height: auto;
+    }
+
+    .links {
+        justify-content: center;
+    }
+
+    #background {
+        background-size: 40%;
+    }
+}
